@@ -9,15 +9,17 @@ type groupsType [][]int
 
 func main() {
 	var groups groupsType
-	firstGroup := []int{2}
+	firstGroup := []int{1}
+	secondGroup := []int{2}
 	groups = append(groups, firstGroup)
+	groups = append(groups, secondGroup)
 	var inputNumber int
 	groupsCount := 1
 	fmt.Print("Введите число: ")
 	fmt.Scanf("%d\n", &inputNumber)
 
 	startTime := time.Now()
-	for counter := 3; counter < inputNumber; counter++ {
+	for counter := 3; counter <= inputNumber; counter++ {
 		numberAdded := false
 		for groupsCounter := 0; groupsCounter < groupsCount; groupsCounter++ {
 			canAdd := canAddToGroup(&groups[groupsCounter], counter)
